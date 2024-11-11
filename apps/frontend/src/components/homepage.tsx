@@ -1,7 +1,7 @@
 import { Header } from './header';
 import { Footer } from './footer';
 
-export function Landingpage() {
+export function Homepage() {
   return (
     <>
     < Header />

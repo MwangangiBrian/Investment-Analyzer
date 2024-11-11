@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export function Login() {
@@ -13,10 +13,10 @@ export function Login() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     axios
-      .post('http://localhost:5000/api/auth/login, values')
+      .post('http://localhost:5000/api/auth/login', values)
       .then((res) => {
-        if(res.data.Status==='Success'){
-            Navigate('/')
+        if (res.data.Status === 'Success') {
+          Navigate({ to: '/' });
         }
       })
       .then((err) => console.log(err));
@@ -29,8 +29,12 @@ export function Login() {
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="email">Email</label>
-            <input type="email" placeholder="Enter Email" name="email"
-            onChange={e => setValues({...values, email: e.target.value})} />
+            <input
+              type="email"
+              placeholder="Enter Email"
+              name="email"
+              onChange={(e) => setValues({ ...values, email: e.target.value })}
+            />
           </div>
           <div>
             <label htmlFor="password">Username</label>
@@ -38,7 +42,9 @@ export function Login() {
               type="password"
               placeholder="Enter Password"
               name="password"
-              onChange={e => setValues({...values, password: e.target.value})}
+              onChange={(e) =>
+                setValues({ ...values, password: e.target.value })
+              }
             />
           </div>
           <button type="submit" className="">
