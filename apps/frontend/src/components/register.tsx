@@ -110,16 +110,9 @@ export function Register({ isOpen, onClose, onLoginClick }: RegisterProps) {
           </button>
 
           <div className="text-sm text-center">
-            <button
-              type="button"
-              onClick={() => {
-                onClose();
-                onLoginClick();
-              }}
-              className="font-medium text-indigo-600 hover:text-indigo-500"
-            >
+            <Link to="/login" onClick={() => onClose()} className="font-medium text-indigo-600 hover:text-indigo-500">
               Already have an account? Sign in
-            </button>
+            </Link>
           </div>
         </form>
       </DialogContent>

@@ -8,6 +8,7 @@ import { Login } from './components/login';
 import { CryptoDashboard } from './pages/crypto.dashboard';
 import { CryptoCoin } from './pages/crypto.coin';
 import About from './components/about';
+import { StocksDashboard } from './pages/stocks.dashboard';
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
         <CurrencyProvider>
           <Routes>
             <Route path="/" element={<Homepage />}/>
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register isOpen={false} onClose={() => {}} onLoginClick={() => {}} />} />
+            <Route path="/login" element={<Login isOpen={false} onClose={() => {}} />} />
             <Route path="/crypto" element={<CryptoDashboard />} />
             <Route path="/crypto/:id" element={<CryptoCoin />} />
+            <Route path="/stocks" element={<StocksDashboard />} />
             <Route path='/about' element={<About />} />
           </Routes>
         </CurrencyProvider>

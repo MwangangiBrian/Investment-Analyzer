@@ -46,8 +46,10 @@ export function Header() {
             <li className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white cursor-pointer transition-colors">
               Forex
             </li>
-            <li className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white cursor-pointer transition-colors">
+            <li>
+            <Link to={"/stocks"} className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white cursor-pointer transition-colors">
               Stocks
+            </Link>
             </li>
             <li>
               <Link
